@@ -2,8 +2,6 @@
 
 A simple to set up faucet for every coin forked from Turtlecoin.
 
-![Screenshot of the frontend](https://github.com/NolaniumProject/nolanium-faucet/blob/master/pictures/home.jpg?raw=true)
-
 ## Configuration
 
 Simply change the `config.js` file. The comments make it pretty self-explanatory.
