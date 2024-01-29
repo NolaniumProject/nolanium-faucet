@@ -378,7 +378,7 @@ function validateClaimRequest(req) {
 		return "The address you put in is the faucet's wallet address."
 	}
 
-	return ''
+	return true
 }
 
 async function updateOrInsertAddress(address) {
