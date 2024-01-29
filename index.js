@@ -262,6 +262,10 @@ app.get('/admin', async (req, res) => {
 	})
 });
 
+function localizeNumber(number) {
+  return number.toLocaleString('en-US');
+}
+
 function getReadableHashRateString(hashrate) {
   var i = 0;
   var byteUnits = [' H', ' kH', ' MH', ' GH', ' TH', ' PH', ' EH', ' ZH', ' YH'];
