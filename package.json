@@ -1,0 +1,21 @@
+{
+	"name": "nolanium-faucet",
+	"version": "1.0.0",
+	"description": "Faucet for Nolanium",
+	"main": "index.js",
+	"author": "StarlightJS",
+	"repository": {
+		"url": "https://github.com/NolaniumProject/nolanium-faucet"
+	},
+	"license": "GPL-3.0",
+	"private": false,
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"express": "^4.17.1",
+		"nedb-promises": "^4.0.4",
+		"pug": "^3.0.0",
+		"terminal-kit": "^1.42.0",
+		"turtlecoin-rpc": "^2.0.5",
+		"request-promise": "^4.2.6"
+	}
+}
