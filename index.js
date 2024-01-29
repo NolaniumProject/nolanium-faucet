@@ -281,7 +281,7 @@ async function getWalletStatus() {
 		const stats = await wallet.status()
 		terminal
 			.green('|')
-			.yellow(` Hashrate         : ${getReadableHashRateString(stats.hashrate)}/s\n`)
+			.yellow(` Hashrate         : ${getReadableHashRateString(stats.hashrate)}\n`)
 			.green('|')
 			.yellow(
 				` Sync status      : ${stats.walletBlockCount}/${stats.networkBlockCount} (${(
@@ -293,7 +293,7 @@ async function getWalletStatus() {
 			.yellow(` Peers            : ${stats.peerCount}\n`)
 
 		status = {
-			netHashrate: `${getReadableHashRateString(stats.hashrate)}\s`,
+			netHashrate: `${getReadableHashRateString(stats.hashrate)}`,
 			walletBlocks: stats.walletBlockCount,
 			networkBlocks: stats.networkBlockCount,
 			peers: stats.peerCount
