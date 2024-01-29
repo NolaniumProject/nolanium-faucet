@@ -260,14 +260,24 @@ app.get('/admin', async (req, res) => {
 		addresses,
 		transactions
 	})
-})
+});
+
+function getReadableHashRateString(hashrate) {
+  var i = 0;
+  var byteUnits = [' H', ' kH', ' MH', ' GH', ' TH', ' PH', ' EH', ' ZH', ' YH'];
+  while (hashrate > 1000) {
+    hashrate = hashrate / 1000;
+    i++;
+  }
+  return localizeNumber(hashrate.toFixed(2)) + byteUnits[i] + "/s";
+}
 
 async function getWalletStatus() {
 	try {
 		const stats = await wallet.status()
 		terminal
 			.green('|')
-			.yellow(` Hashrate         : ${(stats.hashrate / 1000).toFixed(2)} kH/s\n`)
+			.yellow(` Hashrate         : ${getReadableHashRateString(stats.hashrate)}/s\n`)
 			.green('|')
 			.yellow(
 				` Sync status      : ${stats.walletBlockCount}/${stats.networkBlockCount} (${(
@@ -279,7 +289,7 @@ async function getWalletStatus() {
 			.yellow(` Peers            : ${stats.peerCount}\n`)
 
 		status = {
-			netHashrate: (stats.hashrate / 1000).toFixed(2),
+			netHashrate: `${getReadableHashRateString(stats.hashrate)}\s`,
 			walletBlocks: stats.walletBlockCount,
 			networkBlocks: stats.networkBlockCount,
 			peers: stats.peerCount
